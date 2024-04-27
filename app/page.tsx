@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { getMDXComponent } from "next-contentlayer2/hooks";
 
 function PostCard(post: Post) {
   const Content = getMDXComponent(post.body.code);
@@ -12,7 +12,8 @@ function PostCard(post: Post) {
         <Link
           href={post.url}
           className="text-blue-700 hover:text-blue-900"
-          legacyBehavior>
+          legacyBehavior
+        >
           {post.title}
         </Link>
       </h2>
